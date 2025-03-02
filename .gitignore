@@ -1,0 +1,10 @@
+# Ignore dataset files and large files
+data/*.pkl
+data/*.zip
+
+# Ignore Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
