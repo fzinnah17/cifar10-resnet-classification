@@ -1,9 +1,9 @@
 # CIFAR-10 ResNet Classification
 
 ## Team Members
-- [Team Member 1]
-- [Team Member 2]
-- [Team Member 3]
+- Farnaz Zinnah
+- Chinmay Shringi
+- Mohd Sarfaraz Faiyaz
 
 ## Project Overview
 This project implements an optimized ResNet architecture for image classification on the CIFAR-10 dataset. We designed a custom ResNet variant that achieves 81% accuracy on the test set while maintaining a parameter count under 5 million. The model features Squeeze-and-Excitation (SE) blocks, an asymmetric [3,5,3] block distribution, and a 40-80-160 channel progression.
