@@ -106,7 +106,7 @@ srun --account=ece_gy_7123-2025sp --partition=c12m85-a100-1 --gres=gpu --time=04
 ### 3. Setup Container Environment
 ```bash
 # Start Singularity container
-singularity exec --bind /scratch --nv --overlay /scratch/kh3134/overlay-25GB-500K.ext3:rw /scratch/kh3134/cuda11.8.86-cudnn8.7-devel-ubuntu22.04.2.sif /bin/bash
+singularity exec --bind /scratch --nv --overlay /scratch/netid/overlay-25GB-500K.ext3:rw /scratch/netid/cuda11.8.86-cudnn8.7-devel-ubuntu22.04.2.sif /bin/bash
 
 # Inside the container
 Singularity> source /ext3/env.sh
