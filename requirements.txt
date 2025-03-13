@@ -1,7 +1,13 @@
+numpy
 torch
 torchvision
-numpy
 pandas
-matplotlib
 tqdm
-jupyter
+matplotlib
+seaborn
+scikit-learn
+Pillow
+ipywidgets
+numba
+PyYAML
+h5py
