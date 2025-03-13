@@ -17,6 +17,9 @@ This project implements an optimized ResNet architecture for image classificatio
 - Pandas
 - tqdm
 - matplotlib (for visualization)
+- seaborn
+- jupyter
+- papermill (for non-interactive notebook execution)
 
 ### Installation
 ```bash
@@ -25,7 +28,7 @@ git clone https://github.com/[username]/cifar10-resnet-classification.git
 cd cifar10-resnet-classification
 
 # Install required packages
-pip install torch torchvision numpy pandas tqdm matplotlib
+pip install -r requirements.txt
 ```
 
 ### Dataset
@@ -47,10 +50,30 @@ cifar10-resnet-classification/
 
 ## Usage
 
-### Training
-Run the main script to train the model:
+### Running the Jupyter Notebook
+There are several ways to run the notebook:
+
+#### Option 1: Interactive Jupyter Session
 ```bash
-python script.py
+jupyter notebook script.ipynb
+```
+
+#### Option 2: Non-interactive Execution with Papermill
+```bash
+# Install required packages if not already installed
+pip install papermill jupyter seaborn
+
+# Check available Jupyter kernels
+jupyter kernelspec list
+
+# Run the notebook with papermill
+papermill script.ipynb executed_notebook.ipynb -k python3
+
+# Run with logging for progress monitoring
+papermill script.ipynb executed_notebook.ipynb -k python3 --log-output
+
+# View the executed notebook (if you have access to Jupyter)
+jupyter notebook executed_notebook.ipynb
 ```
 
 ## Running on NYU HPC
@@ -91,9 +114,13 @@ Singularity> conda activate base
 (base) Singularity> cd /scratch/netid/path-to-project
 ```
 
-### 4. Run the Training
+### 4. Run the Notebook on HPC
 ```bash
-(base) Singularity> python script.py
+# Install required packages
+(base) Singularity> pip install papermill jupyter seaborn
+
+# Execute the notebook non-interactively
+(base) Singularity> papermill script.ipynb executed_notebook.ipynb -k python3 --log-output
 ```
 
 ### First-time Setup (Only if needed)
@@ -123,10 +150,11 @@ bash ./Miniconda3-latest-Linux-x86_64.sh -b -p /ext3/miniconda3
 ## Project Structure
 ```
 cifar10-resnet-classification/
-├── data/                # Dataset directory
-├── script.py            # Main training and evaluation script
-├── best_model.pth       # Best validation model checkpoint
-├── best_ema_model.pth   # EMA model checkpoint
-├── swa_model.pth        # SWA model checkpoint
-└── README.md            # Project documentation
+├── data/                   # Dataset directory
+├── script.ipynb            # Main training and evaluation notebook
+├── requirements.txt        # Dependencies
+├── best_model.pth          # Best validation model checkpoint
+├── best_ema_model.pth      # EMA model checkpoint
+├── swa_model.pth           # SWA model checkpoint
+└── README.md               # Project documentation
 ```
