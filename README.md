@@ -151,10 +151,17 @@ bash ./Miniconda3-latest-Linux-x86_64.sh -b -p /ext3/miniconda3
 ```
 cifar10-resnet-classification/
 ├── data/                   # Dataset directory
+├── reports/                # Research paper and documentation (To be added)
+│   ├── final_report.pdf    # Research paper summarizing results
 ├── script.ipynb            # Main training and evaluation notebook
+├── executed_script.ipynb   # Executed notebook (for reproducibility)
 ├── requirements.txt        # Dependencies
 ├── best_model.pth          # Best validation model checkpoint
 ├── best_ema_model.pth      # EMA model checkpoint
 ├── swa_model.pth           # SWA model checkpoint
+├── final_model.pth         # Final model (ensemble)
+├── training_metrics.png    # Training loss/accuracy plot
+├── class_distribution.png  # Test class predictions
+├── submission.csv          # Kaggle submission file
 └── README.md               # Project documentation
 ```
